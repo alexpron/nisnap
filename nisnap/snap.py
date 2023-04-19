@@ -201,7 +201,8 @@ def _snap_slices_(data, slices, axis, bb=None, figsize=None, pbar=None):
             else:  # standard 3D label volume
 
                 if is_raw:
-                    vmax, cmap = (None, 'gray')
+
+                    vmax, cmap = (np.percentile(d,99), 'gray')
                 else:
                     vmax = np.max(labels)
                     from matplotlib.colors import ListedColormap
