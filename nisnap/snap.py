@@ -121,7 +121,7 @@ def _snap_contours_(data, slices, axis, bg, figsize=None, bb=None, pbar=None):
                                         0, 1), 0)
             test3 = test3[min(xs):max(xs) + 1, min(ys):max(ys) + 1]
 
-            ax.imshow(test3, interpolation='none', cmap='gray')
+            ax.imshow(test3, interpolation='none', cmap='inferno')
 
             test = test[min(xs):max(xs) + 1, min(ys):max(ys) + 1]
 
@@ -190,7 +190,7 @@ def _snap_slices_(data, slices, axis, bb=None, figsize=None, pbar=None):
             else:  # standard 3D label volume
 
                 if has_orig:
-                    vmax, cmap = (None, 'gray')
+                    vmax, cmap = (None, 'inferno')
                 else:
                     vmax = np.max(labels)
                     from matplotlib.colors import ListedColormap
